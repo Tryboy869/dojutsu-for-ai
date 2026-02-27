@@ -1,101 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 800 260"
-     width="100%"
-     role="img"
-     aria-label="Senjutsu cinematic anime eyes">
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%">
   <defs>
-    <!-- Background -->
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#24160f"/>
-      <stop offset="100%" stop-color="#1b120e"/>
-    </linearGradient>
-
-    <!-- Soft blur -->
-    <filter id="soft">
-      <feGaussianBlur stdDeviation="4"/>
-    </filter>
-
-    <!-- Eye shape -->
-    <clipPath id="eyeLeft">
-      <path d="M160 130 C220 90 320 90 380 130 C320 160 220 160 160 130 Z"/>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="5" /></filter>
+    <filter id="noseBlur"><feGaussianBlur stdDeviation="10" /></filter>
+    
+    <clipPath id="lC">
+      <path d="M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z">
+        <animate attributeName="d"
+          values="M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z;
+                  M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z;
+                  M 160 150 C 200 152, 300 152, 340 150 C 300 155, 200 155, 160 150 Z;
+                  M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z;
+                  M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z"
+          keyTimes="0;0.90;0.94;0.98;1"
+          dur="1s"
+          repeatCount="indefinite" />
+      </path>
     </clipPath>
-    <clipPath id="eyeRight">
-      <path d="M420 130 C480 90 580 90 640 130 C580 160 480 160 420 130 Z"/>
+
+    <clipPath id="rC">
+      <path d="M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z">
+        <animate attributeName="d"
+          values="M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z;
+                  M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z;
+                  M 460 150 C 500 152, 600 152, 640 150 C 600 155, 500 155, 460 150 Z;
+                  M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z;
+                  M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z"
+          keyTimes="0;0.90;0.94;0.98;1"
+          dur="1s"
+          repeatCount="indefinite" />
+      </path>
     </clipPath>
+
+    <radialGradient id="paupiereGradient" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="260" fill="url(#bg)"/>
+  <rect width="800" height="300" fill="#0a0a0c" />
 
-  <!-- Eyebrows (light revealed) -->
-  <path d="M170 92 C240 72 300 72 370 92"
-        stroke="#2a1c16" stroke-width="10"
-        fill="none" filter="url(#soft)" opacity="0.6"/>
-  <path d="M430 92 C500 72 560 72 630 92"
-        stroke="#2a1c16" stroke-width="10"
-        fill="none" filter="url(#soft)" opacity="0.6"/>
+  <ellipse cx="400" cy="180" rx="35" ry="80" fill="#000000" opacity="0.12" filter="url(#noseBlur)" />
 
-  <!-- Nose hint -->
-  <ellipse cx="400" cy="160" rx="26" ry="70"
-           fill="#261a14" opacity="0.18" filter="url(#soft)"/>
+  <path d="M 180 105 C 220 95, 280 95, 320 105"
+        fill="none" stroke="#000" stroke-width="25" opacity="0.4" filter="url(#softBlur)" />
+  <path d="M 480 105 C 520 95, 580 95, 620 105"
+        fill="none" stroke="#000" stroke-width="25" opacity="0.4" filter="url(#softBlur)" />
 
-  <!-- Eye base shapes -->
-  <path d="M160 130 C220 90 320 90 380 130 C320 160 220 160 160 130 Z"
-        fill="#100b09"/>
-  <path d="M420 130 C480 90 580 90 640 130 C580 160 480 160 420 130 Z"
-        fill="#100b09"/>
+  <path d="M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z" fill="#050508" />
+  <path d="M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z" fill="#050508" />
 
-  <!-- LEFT EYE -->
-  <g clip-path="url(#eyeLeft)">
-    <g>
-      <animateTransform attributeName="transform" type="translate"
-        values="0 0;-18 0;18 0;0 14;0 -10;0 0;0 0"
-        keyTimes="0;0.12;0.24;0.36;0.48;0.6;1"
-        dur="7s" repeatCount="indefinite"/>
-
-      <circle cx="270" cy="130" r="38" fill="#5b5f66"/>
-      <circle cx="270" cy="130" r="22" fill="#9aa0a6"/>
-      <ellipse cx="270" cy="130" rx="18" ry="4" fill="#0c0c0f"/>
-    </g>
+  <g clip-path="url(#lC)">
+    <circle cx="250" cy="150" r="75" fill="#cbd5e1" opacity="0.03" />
+    <circle cx="250" cy="150" r="60" fill="#cbd5e1" opacity="0.06" />
+    <circle cx="250" cy="150" r="34" fill="#334155" />
+    <circle cx="250" cy="150" r="20" fill="#94a3b8" />
+    <circle cx="250" cy="150" r="10" fill="#e2e8f0" />
+    <circle cx="250" cy="150" r="34" stroke="#f8fafc" stroke-width="1.5" fill="none" opacity="0.9" />
+    <ellipse cx="250" cy="150" rx="18" ry="4" fill="#050505" />
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0;0,0;-15,0;-15,0;15,0;15,0;0,10;0,10;0,0"
+      keyTimes="0;0.4;0.45;0.55;0.6;0.7;0.75;0.85;1"
+      dur="10s" repeatCount="indefinite" />
   </g>
 
-  <!-- RIGHT EYE -->
-  <g clip-path="url(#eyeRight)">
-    <g>
-      <animateTransform attributeName="transform" type="translate"
-        values="0 0;-18 0;18 0;0 14;0 -10;0 0;0 0"
-        keyTimes="0;0.12;0.24;0.36;0.48;0.6;1"
-        dur="7s" repeatCount="indefinite"/>
-
-      <circle cx="530" cy="130" r="38" fill="#4e5962"/>
-      <circle cx="530" cy="130" r="18" fill="#cbd5e1"/>
-      <circle cx="530" cy="130" r="6" fill="#0b1220"/>
-    </g>
+  <g clip-path="url(#rC)">
+    <circle cx="550" cy="150" r="75" fill="#93c5fd" opacity="0.03" />
+    <circle cx="550" cy="150" r="60" fill="#93c5fd" opacity="0.06" />
+    <circle cx="550" cy="150" r="34" fill="#1e293b" />
+    <circle cx="550" cy="150" r="12" fill="#cbd5e1" />
+    <circle cx="550" cy="150" r="35" stroke="#60a5fa" stroke-width="2.5" fill="none" opacity="0.4" />
+    <circle cx="550" cy="150" r="5" fill="#0f172a" />
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0;0,0;-15,0;-15,0;15,0;15,0;0,10;0,10;0,0"
+      keyTimes="0;0.4;0.45;0.55;0.6;0.7;0.75;0.85;1"
+      dur="10s" repeatCount="indefinite" />
   </g>
 
-  <!-- Eyelids (sync blink) -->
-  <path fill="#24160f">
-    <animate attributeName="d"
-      values="
-      M160 130 C220 90 320 90 380 130;
-      M160 130 C220 90 320 90 380 130;
-      M160 132 C220 132 320 132 380 132;
-      M160 130 C220 90 320 90 380 130"
-      keyTimes="0;0.85;0.9;1"
-      dur="1s" repeatCount="indefinite"/>
-  </path>
-
-  <path fill="#24160f">
-    <animate attributeName="d"
-      values="
-      M420 130 C480 90 580 90 640 130;
-      M420 130 C480 90 580 90 640 130;
-      M420 132 C480 132 580 132 640 132;
-      M420 130 C480 90 580 90 640 130"
-      keyTimes="0;0.85;0.9;1"
-      dur="1s" repeatCount="indefinite"/>
-  </path>
-
+  <path d="M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z"
+        fill="url(#paupiereGradient)" opacity="0.2" clip-path="url(#lC)" />
+  <path d="M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z"
+        fill="url(#paupiereGradient)" opacity="0.2" clip-path="url(#rC)" />
 </svg>
