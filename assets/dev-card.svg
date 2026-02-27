@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" width="520" height="280"
+     role="img" aria-labelledby="card-title card-desc">
+  <title id="card-title">Daouda Abdoul Anzize — Computational Paradigm Designer</title>
+  <desc id="card-desc">Developer card for Daouda Abdoul Anzize, creator of Senjutsu and NGPC</desc>
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0f0022"/>
+      <stop offset="100%" stop-color="#000a1a"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#7c3aed"/>
+      <stop offset="50%"  stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="cardGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="subtleGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Avatar clip -->
+    <clipPath id="avatarClip">
+      <circle cx="68" cy="80" r="44"/>
+    </clipPath>
+    <!-- Card border animation -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#7c3aed">
+        <animate attributeName="stop-color" values="#7c3aed;#0ea5e9;#fbbf24;#7c3aed" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0ea5e9">
+        <animate attributeName="stop-color" values="#0ea5e9;#fbbf24;#7c3aed;#0ea5e9" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="520" height="280" rx="16" fill="url(#cardBg)"/>
+
+  <!-- Animated border -->
+  <rect width="520" height="280" rx="16" fill="none"
+        stroke="url(#borderGrad)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="520" height="4" rx="2" fill="url(#accentLine)"/>
+
+  <!-- Avatar circle -->
+  <circle cx="68" cy="80" r="46" fill="none" stroke="url(#accentLine)" stroke-width="2">
+    <animate attributeName="r" values="46;49;46" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Avatar background -->
+  <circle cx="68" cy="80" r="44" fill="#1a0040"/>
+
+  <!-- Avatar initials — DAA -->
+  <text x="68" y="87" text-anchor="middle" font-size="22" font-weight="bold"
+        font-family="'Courier New', monospace" fill="url(#accentLine)" filter="url(#cardGlow)">DAA</text>
+
+  <!-- Name -->
+  <text x="136" y="58" font-size="20" font-weight="bold" font-family="sans-serif" fill="white">
+    Daouda Abdoul Anzize
+  </text>
+
+  <!-- Role -->
+  <text x="136" y="78" font-size="12" font-family="monospace" fill="#a78bfa">
+    Computational Paradigm Designer
+  </text>
+
+  <!-- Quote -->
+  <text x="136" y="100" font-size="10" font-family="serif" fill="#64748b" font-style="italic">
+    "I don't build apps. I build the clay others use to build apps."
+  </text>
+
+  <!-- Location + Age -->
+  <text x="136" y="120" font-size="10" font-family="sans-serif" fill="#94a3b8">
+    📍 24 ans • Cotonou, Bénin → Global Remote
+  </text>
+
+  <!-- Divider -->
+  <line x1="20" y1="140" x2="500" y2="140" stroke="#1e1040" stroke-width="1"/>
+
+  <!-- What I Create -->
+  <text x="20" y="160" font-size="11" font-weight="bold" font-family="sans-serif" fill="#7c3aed">
+    🧬 What I Create
+  </text>
+
+  <!-- Tags row 1 -->
+  <g transform="translate(20, 170)">
+    <rect width="130" height="20" rx="10" fill="#1a0040" stroke="#7c3aed" stroke-width="0.8"/>
+    <text x="65" y="14" text-anchor="middle" font-size="9" font-family="monospace" fill="#c084fc">Meta-Architectures</text>
+  </g>
+  <g transform="translate(158, 170)">
+    <rect width="130" height="20" rx="10" fill="#001830" stroke="#0ea5e9" stroke-width="0.8"/>
+    <text x="65" y="14" text-anchor="middle" font-size="9" font-family="monospace" fill="#38bdf8">Universal Protocols</text>
+  </g>
+  <g transform="translate(296, 170)">
+    <rect width="110" height="20" rx="10" fill="#1a1000" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="55" y="14" text-anchor="middle" font-size="9" font-family="monospace" fill="#fcd34d">AI Infrastructure</text>
+  </g>
+
+  <!-- Tags row 2 -->
+  <g transform="translate(20, 196)">
+    <rect width="150" height="20" rx="10" fill="#001010" stroke="#10b981" stroke-width="0.8"/>
+    <text x="75" y="14" text-anchor="middle" font-size="9" font-family="monospace" fill="#34d399">Emergent Computing</text>
+  </g>
+  <g transform="translate(178, 196)">
+    <rect width="130" height="20" rx="10" fill="#0f0022" stroke="#e879f9" stroke-width="0.8"/>
+    <text x="65" y="14" text-anchor="middle" font-size="9" font-family="monospace" fill="#e879f9">Local-First Systems</text>
+  </g>
+
+  <!-- Featured projects -->
+  <text x="20" y="235" font-size="11" font-weight="bold" font-family="sans-serif" fill="#7c3aed">
+    🔬 Featured: NEXUS AXION • Nexus Backpressure Protocol • Informatique Réalitaire
+  </text>
+
+  <!-- Stack -->
+  <text x="20" y="255" font-size="10" font-family="monospace" fill="#475569">
+    Python • Rust • C++ • JavaScript • Go  |  Distributed Systems • Meta-Programming
+  </text>
+
+  <!-- Link -->
+  <text x="20" y="272" font-size="9" font-family="monospace" fill="#0ea5e9" opacity="0.7">
+    tryboy869.github.io/daa  •  @Nexusstudio100  •  40+ open-source projects
+  </text>
+
+  <!-- Particle float decoration -->
+  <circle cx="490" cy="160" r="2" fill="#7c3aed" opacity="0.6">
+    <animate attributeName="cy" values="160;140;160" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="475" cy="200" r="1.5" fill="#38bdf8" opacity="0.5">
+    <animate attributeName="cy" values="200;185;200" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="220" r="1" fill="#fbbf24" opacity="0.4">
+    <animate attributeName="cy" values="220;205;220" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

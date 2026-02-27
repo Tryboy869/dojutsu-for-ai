@@ -1,0 +1,52 @@
+{
+  "$schema": "https://allpath-runner.dev/schema/v1.json",
+  "name": "senjutsu-coding-agent",
+  "version": "1.0.0b1",
+  "language": "python",
+  "entry_point": "senjutsu/main.py",
+  "description": {
+    "fr": "Agent de code IA avec Précision Absolue — Byakugan × Mode Sage × Jōgan × RAG Booster",
+    "en": "Precision Absolute AI coding agent — Byakugan × Mode Sage × Jōgan × RAG Booster"
+  },
+  "functions": [
+    {
+      "name": "run",
+      "description": {
+        "fr": "Exécute le pipeline complet Précision Absolue sur une tâche de développement",
+        "en": "Run the full Precision Absolute pipeline on a development task"
+      },
+      "params": [
+        {"name": "task",     "type": "string",  "description": {"fr": "La tâche à accomplir", "en": "The task to accomplish"}},
+        {"name": "api_key",  "type": "string",  "description": {"en": "LLM API key"}},
+        {"name": "provider", "type": "string",  "description": {"en": "LLM provider: groq (default) or openai"}},
+        {"name": "model",    "type": "string",  "description": {"en": "Model name (optional, uses default for provider)"}}
+      ],
+      "returns": {"type": "object", "description": {"en": "JSON with byakugan, mode_sage, jougan, execution, total_time"}}
+    },
+    {
+      "name": "version",
+      "description": {"en": "Returns current package version"},
+      "params": [],
+      "returns": {"type": "string"}
+    },
+    {
+      "name": "skills_list",
+      "description": {"en": "Lists all indexed skills"},
+      "params": [],
+      "returns": {"type": "string"}
+    }
+  ],
+  "dependencies": {
+    "runtime": ["python3>=3.8"],
+    "packages": ["groq>=0.9.0"]
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Daouda Abdoul Anzize",
+    "email": "anzize.contact@proton.me",
+    "url": "https://tryboy869.github.io/daa"
+  },
+  "repository": "https://github.com/Tryboy869/senjutsu-coding-agent",
+  "homepage": "https://github.com/Tryboy869/senjutsu-coding-agent",
+  "tags": ["ai-agent", "coding-agent", "llm", "rag", "byakugan", "senjutsu", "precision-absolute"]
+}
