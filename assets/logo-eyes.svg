@@ -26,9 +26,27 @@
                  dur="1s" repeatCount="indefinite" />
       </path>
     </clipPath>
+
+    <radialGradient id="sourcilGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="nezGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="paupiereGradient" cx="50%" cy="0%" r="100%" fx="50%" fy="0%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
   </defs>
 
   <path d="M0,0 L800,0 L800,300 L0,300 Z" fill="#000000" />
+
+  <circle cx="400" cy="150" r="100" fill="url(#nezGradient)" opacity="0.08" />
+
+  <path d="M 180 110 C 220 100, 280 100, 320 110" fill="none" stroke="url(#sourcilGradient)" stroke-width="15" stroke-linecap="round" opacity="0.2" />
+  <path d="M 480 110 C 520 100, 580 100, 620 110" fill="none" stroke="url(#sourcilGradient)" stroke-width="15" stroke-linecap="round" opacity="0.2" />
 
   <path d="M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z" fill="#050508">
     <animate attributeName="d"
@@ -40,6 +58,8 @@
              keyTimes="0; 0.90; 0.94; 0.98; 1"
              dur="1s" repeatCount="indefinite" />
   </path>
+
+  <path d="M 160 150 C 200 115, 300 115, 340 150 C 300 170, 200 170, 160 150 Z" fill="url(#paupiereGradient)" opacity="0.35" clip-path="url(#lC)" />
 
   <circle cx="250" cy="150" r="75" fill="#cbd5e1" opacity="0.03" clip-path="url(#lC)">
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -25,0; -25,0; 25,0; 25,0; 0,15; 0,15; 0,-15; 0,-15; 0,0; 0,0; 20,-15; 20,-15; -20,15; -20,15; 25,0; 25,0; 0,-15; 0,-15; 0,0; 0,0" keyTimes="0; 0.036; 0.045; 0.081; 0.090; 0.127; 0.136; 0.172; 0.181; 0.218; 0.227; 0.490; 0.500; 0.536; 0.545; 0.581; 0.590; 0.627; 0.636; 0.672; 0.681; 1.0" dur="11s" repeatCount="indefinite" />
@@ -88,6 +108,8 @@
              keyTimes="0; 0.90; 0.94; 0.98; 1"
              dur="1s" repeatCount="indefinite" />
   </path>
+
+  <path d="M 460 150 C 500 115, 600 115, 640 150 C 600 170, 500 170, 460 150 Z" fill="url(#paupiereGradient)" opacity="0.35" clip-path="url(#rC)" />
 
   <circle cx="550" cy="150" r="75" fill="#93c5fd" opacity="0.03" clip-path="url(#rC)">
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -25,0; -25,0; 25,0; 25,0; 0,15; 0,15; 0,-15; 0,-15; 0,0; 0,0; 20,-15; 20,-15; -20,15; -20,15; 25,0; 25,0; 0,-15; 0,-15; 0,0; 0,0" keyTimes="0; 0.036; 0.045; 0.081; 0.090; 0.127; 0.136; 0.172; 0.181; 0.218; 0.227; 0.490; 0.500; 0.536; 0.545; 0.581; 0.590; 0.627; 0.636; 0.672; 0.681; 1.0" dur="11s" repeatCount="indefinite" />
