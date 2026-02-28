@@ -141,6 +141,19 @@ Toutes les animations respectent `prefers-reduced-motion` pour l'accessibilité.
 
 ---
 
+
+## Résultats du benchmark
+
+<div align="center">
+
+![Benchmark](assets/benchmark.svg)
+
+</div>
+
+> **Dojutsu 90% vs Baseline 55%** — Le pipeline prend ~10× plus de temps mais anticipe
+> 8 modes de défaillance production non mentionnés dans la tâche.
+> Voir [`tests/benchmarks/`](tests/benchmarks/) pour l'analyse complète.
+
 <div align="center">
 
 ![Footer](assets/footer.svg)

@@ -1,5 +1,21 @@
 # Changelog — Dojutsu-for-AI
 
+## [2.1.0] — 2026-02-28
+
+### Added
+- `assets/benchmark.svg` — animated benchmark visualization (film-style cinematic)
+- `examples/` — 8 language clients: TypeScript, Go, Rust, Java, PHP, Ruby, C#, Python
+- `tests/benchmarks/001_async_job_queue.md` — full benchmark analysis
+- `tests/benchmarks/README.md` — benchmark index
+- README sections: benchmark results + multi-language examples (collapsible)
+- README.fr.md — section benchmark en français
+
+### Changed
+- Repo renamed: `senjutsu-coding-agent` → `dojutsu-for-ai`
+- All internal URLs updated to new repo name
+
+---
+
 ## [2.0.0] — 2026-02-28
 
 ### 🔄 Rebrand complet

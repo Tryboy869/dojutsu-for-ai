@@ -170,6 +170,93 @@ All animations respect `prefers-reduced-motion` for accessibility.
 
 ---
 
+
+## Benchmark Results
+
+<div align="center">
+
+![Benchmark](assets/benchmark.svg)
+
+</div>
+
+> **Dojutsu 90% vs Baseline 55%** — The pipeline takes ~10× longer but anticipates
+> 8 production failure modes not mentioned in the prompt, and ships with tests + ops scripts.
+> See [`tests/benchmarks/`](tests/benchmarks/) for full analysis.
+
+
+## Multi-language Examples
+
+All languages connect to the same Allpath daemon via Unix socket — **zero extra setup**.
+
+<details>
+<summary><b>TypeScript / Node.js</b></summary>
+
+```typescript
+import * as net from "net";
+
+function dojutsu(fn: string, args: string[] = []): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const socket = net.createConnection("/tmp/allpath_runner.sock");
+    const chunks: Buffer[] = [];
+    socket.on("connect", () =>
+      socket.write(JSON.stringify({ package: "dojutsu-agent", function: fn, args }))
+    );
+    socket.on("data",  c => chunks.push(c));
+    socket.on("end",   () => resolve(JSON.parse(Buffer.concat(chunks).toString())));
+    socket.on("error", reject);
+  });
+}
+
+const result = await dojutsu("run", ["Build a rate limiter with Redis", process.env.GROQ_API_KEY!, "groq"]);
+console.log(result.execution);
+```
+
+</details>
+
+<details>
+<summary><b>Go</b></summary>
+
+```go
+func dojutsu(fn string, args []string) (*DojutsuResult, error) {
+    conn, _ := net.DialTimeout("unix", "/tmp/allpath_runner.sock", 5*time.Second)
+    defer conn.Close()
+    req, _ := json.Marshal(map[string]any{"package": "dojutsu-agent", "function": fn, "args": args})
+    conn.Write(req)
+    data, _ := io.ReadAll(conn)
+    var result DojutsuResult
+    json.Unmarshal(data, &result)
+    return &result, nil
+}
+```
+
+</details>
+
+<details>
+<summary><b>Rust</b></summary>
+
+```rust
+async fn dojutsu(function: &str, args: Vec<&str>) -> anyhow::Result<DojutsuResult> {
+    let mut stream = UnixStream::connect("/tmp/allpath_runner.sock").await?;
+    let payload = serde_json::to_vec(&Request { package: "dojutsu-agent", function, args })?;
+    stream.write_all(&payload).await?;
+    stream.shutdown().await?;
+    let mut buf = Vec::new();
+    stream.read_to_end(&mut buf).await?;
+    Ok(serde_json::from_slice(&buf)?)
+}
+```
+
+</details>
+
+<details>
+<summary><b>Java · PHP · Ruby · C#</b></summary>
+
+See [`examples/`](examples/) for complete, runnable files for all 8 languages.
+
+</details>
+
+> All provider params (`groq`, `openai`, `anthropic`, `mistral`, `openrouter`, `huggingface`) work identically across every language.
+
 <div align="center">
 
 ![Footer](assets/footer.svg)
