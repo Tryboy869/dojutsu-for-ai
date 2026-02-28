@@ -57,12 +57,12 @@
     Cotonou, Bénin → Global Remote  •  MIT License
   </text>
 
-  <!-- Right: version + links -->
+  <!-- Right: version + allpath usage -->
   <text x="870" y="34" text-anchor="end" font-size="10" font-family="monospace" fill="#38bdf8">
-    v1.0.0-beta
+    v1.1.0-beta
   </text>
   <text x="870" y="54" text-anchor="end" font-size="9" font-family="monospace" fill="#334155">
-    pip install senjutsu
+    git clone → allpath-runner.py daemon
     <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
   </text>
 </svg>
