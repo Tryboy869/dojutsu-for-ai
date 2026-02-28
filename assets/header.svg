@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" width="900" height="120"
      role="img" aria-labelledby="header-title">
-  <title id="header-title">Senjutsu Coding Agent — Header</title>
+  <title id="header-title">Dojutsu-for-AI — Header</title>
   <style>
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
     .title { font-family: 'Courier New', monospace; }
@@ -82,7 +82,7 @@
   <text x="450" y="52" text-anchor="middle" font-size="32" font-weight="bold"
         font-family="'Courier New', monospace" fill="url(#titleGrad)" filter="url(#titleGlow)"
         class="title">
-    SENJUTSU CODING AGENT
+    DOJUTSU-FOR-AI
   </text>
 
   <!-- Subtitle -->

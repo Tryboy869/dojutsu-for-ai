@@ -1,0 +1,161 @@
+{
+  "$schema": "https://allpath-runner.dev/schema/v1.json",
+  "name": "dojutsu-for-ai",
+  "version": "2.0.0",
+  "language": "python",
+  "entry_point": "main.py",
+  "description": {
+    "fr": "Agent IA Précision Absolue — pipeline 5 étapes (Byakugan × Mode Sage × Jōgan × RAG × Exécution). Compatible avec tout provider IA : Groq, OpenAI, HuggingFace, OpenRouter, Anthropic, Mistral.",
+    "en": "Precision Absolute AI coding agent — 5-step pipeline (Byakugan × Mode Sage × Jōgan × RAG × Execution). Works with any AI provider: Groq, OpenAI, HuggingFace, OpenRouter, Anthropic, Mistral."
+  },
+  "functions": [
+    {
+      "name": "run",
+      "description": {
+        "en": "Full 5-step pipeline → production-ready code"
+      },
+      "params": [
+        {
+          "name": "task",
+          "type": "string",
+          "description": {
+            "en": "Dev task in natural language"
+          }
+        },
+        {
+          "name": "api_key",
+          "type": "string",
+          "description": {
+            "en": "LLM API key (or set env var)"
+          }
+        },
+        {
+          "name": "provider",
+          "type": "string",
+          "description": {
+            "en": "groq | openai | huggingface | openrouter | anthropic | mistral"
+          }
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "description": {
+            "en": "Model name (optional)"
+          }
+        },
+        {
+          "name": "verbose",
+          "type": "string",
+          "description": {
+            "en": "true/false"
+          }
+        }
+      ],
+      "returns": {
+        "type": "object",
+        "description": {
+          "en": "{byakugan, mode_sage, jougan, execution, skills_used, timing, total_time}"
+        }
+      }
+    },
+    {
+      "name": "byakugan",
+      "description": {
+        "en": "Structural vision only (1 LLM call)"
+      },
+      "params": [
+        {
+          "name": "task",
+          "type": "string"
+        },
+        {
+          "name": "api_key",
+          "type": "string"
+        },
+        {
+          "name": "provider",
+          "type": "string"
+        },
+        {
+          "name": "model",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "skills_list",
+      "description": {
+        "en": "List all indexed RAG skills"
+      },
+      "params": [],
+      "returns": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "skills_count",
+      "description": {
+        "en": "Number of indexed skills"
+      },
+      "params": [],
+      "returns": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "check_skill",
+      "description": {
+        "en": "Security-validate a skill"
+      },
+      "params": [
+        {
+          "name": "skill_content",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "version",
+      "description": {
+        "en": "Package version"
+      },
+      "params": [],
+      "returns": {
+        "type": "object"
+      }
+    }
+  ],
+  "dependencies": {
+    "runtime": [
+      "python3>=3.8"
+    ],
+    "packages": [
+      "groq>=0.9.0"
+    ]
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Daouda Abdoul Anzize",
+    "email": "anzize.contact@proton.me",
+    "url": "https://github.com/Tryboy869"
+  },
+  "repository": "https://github.com/Tryboy869/senjutsu-coding-agent",
+  "tags": [
+    "dojutsu-for-ai",
+    "ai-agent",
+    "coding-agent",
+    "llm",
+    "rag",
+    "byakugan",
+    "senjutsu",
+    "allpath",
+    "dojutsu",
+    "precision-absolute"
+  ]
+}

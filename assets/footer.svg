@@ -40,10 +40,10 @@
   <!-- Left: logo text -->
   <text x="30" y="38" font-size="16" font-weight="bold"
         font-family="'Courier New', monospace" fill="#c084fc" filter="url(#fGlow)">
-    🥷 SENJUTSU
+    🥷 DOJUTSU
   </text>
   <text x="30" y="56" font-size="9" font-family="monospace" fill="#475569">
-    Precision Absolute AI Coding Agent
+    Dojutsu-for-AI · Any Provider · Allpath Runner
   </text>
 
   <!-- Center: built with -->
@@ -59,7 +59,7 @@
 
   <!-- Right: version + allpath usage -->
   <text x="870" y="34" text-anchor="end" font-size="10" font-family="monospace" fill="#38bdf8">
-    v1.1.0-beta
+    v2.0.0
   </text>
   <text x="870" y="54" text-anchor="end" font-size="9" font-family="monospace" fill="#334155">
     git clone → allpath-runner.py daemon

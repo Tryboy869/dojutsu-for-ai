@@ -1,22 +1,39 @@
-# Changelog
+# Changelog — Dojutsu-for-AI
+
+## [2.0.0] — 2026-02-28
+
+### 🔄 Rebrand complet
+- Renamed package: `senjutsu-coding-agent` → `dojutsu-for-ai`
+- Renamed provider: `senjutsu-agent` → `dojutsu-agent`
+- Distribution: Allpath Runner uniquement (plus de PyPI)
+
+### 🌐 Multi-provider IA
+- Support natif: Groq, OpenAI, Anthropic, Mistral, OpenRouter, HuggingFace
+- `provider` param accepte n'importe quel endpoint compatible OpenAI
+- Auto-détection de la clé API via variables d'environnement
+
+### 📚 Skills
+- 593 skills intégrés (harvest automatique depuis 7 repos publics)
+- RAG TF-IDF réel (suppression des bonus arbitraires +500)
+- Cache persistant `.senjutsu_cache/index.json`
+
+### 🤖 GitHub Actions
+- Auto-release déclenché à chaque nouvelle section dans CHANGELOG.md
+- Script shell `scripts/detect_release.sh` pour la détection de version
+- Aucune dépendance PyPI / aucun build nécessaire
+
+### 🧹 Nettoyage
+- Suppression des fichiers de déploiement Colab obsolètes
+- Suppression de `pyproject.toml` (plus de package Python à builder)
+- README reécrits (EN + FR) avec les 4 SVG animés
+
+---
 
 ## [1.0.0b1] — 2026-02-26
 
 ### Added
-- Initial beta release
-- Byakugan module: absolute structural vision
-- Mode Sage module: global systemic coherence
-- Jōgan module: emergent trajectory anticipation
-- RAG Booster: gravitational skills engine with BLACK_HOLE cache
-- Three built-in priority skills: dev-expert, github-actions, svg-animations
-- Multi-layer security filtering for skill validation
-- Allpath Runner integration (`allpath.expose.json`)
-- CLI: `senjutsu "your task"`
-- Full test suite (25 tests)
-- 4 animated SVG assets for README
-- English and French README
-
-### Architecture
-- NGPC BLACK_HOLE pattern cache (761× speedup)
-- Pipeline: Byakugan → Mode Sage → Jōgan → RAG → Execution
-- Supports Groq and OpenAI providers
+- Initial beta release — Senjutsu Coding Agent
+- Byakugan, Mode Sage, Jōgan, RAG Booster, pipeline 5 étapes
+- Allpath Runner integration
+- 26 skills builtins
+- README EN + FR, 4 SVG animés

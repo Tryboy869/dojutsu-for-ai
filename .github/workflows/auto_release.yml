@@ -1,0 +1,59 @@
+name: Auto-Release on CHANGELOG
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "CHANGELOG.md"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Detect & Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Make scripts executable
+        run: chmod +x scripts/detect_release.sh scripts/extract_changelog.sh
+
+      - name: Detect new version in CHANGELOG
+        id: detect
+        run: |
+          TAG=$(bash scripts/detect_release.sh) || exit 0
+          echo "tag=${TAG}" >> $GITHUB_OUTPUT
+          echo "new_release=true" >> $GITHUB_OUTPUT
+          echo "Detected new release: ${TAG}"
+
+      - name: Extract changelog body
+        if: steps.detect.outputs.new_release == 'true'
+        id: body
+        run: |
+          BODY=$(bash scripts/extract_changelog.sh)
+          # Multiline safe
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Git tag
+        if: steps.detect.outputs.new_release == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.detect.outputs.tag }}
+          git push origin ${{ steps.detect.outputs.tag }}
+
+      - name: Publish GitHub Release
+        if: steps.detect.outputs.new_release == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.detect.outputs.tag }}
+          name: "🥷 Dojutsu-for-AI ${{ steps.detect.outputs.tag }}"
+          body: ${{ steps.body.outputs.body }}
+          prerelease: ${{ contains(steps.detect.outputs.tag, 'beta') || contains(steps.detect.outputs.tag, 'rc') }}
