@@ -10,6 +10,18 @@
 
 </div>
 
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa?style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-38bdf8?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Allpath Runner](https://img.shields.io/badge/Allpath_Runner-compatible-10b981?style=flat-square&logo=fastapi&logoColor=white)](https://allpath-runner.dev)
+[![Skills](https://img.shields.io/badge/Skills_RAG-593%2B-fbbf24?style=flat-square&logo=bookstack&logoColor=white)](senjutsu/skills/)
+[![Providers](https://img.shields.io/badge/Providers_IA-6-c084fc?style=flat-square&logo=openai&logoColor=white)](#compatible-avec-nimporte-quel-provider-ia)
+[![Languages](https://img.shields.io/badge/Exemples_clients-8_langages-0ea5e9?style=flat-square&logo=code&logoColor=white)](examples/)
+[![Release](https://img.shields.io/github/v/release/Tryboy869/dojutsu-for-ai?style=flat-square&color=10b981&logo=github&label=Release)](https://github.com/Tryboy869/dojutsu-for-ai/releases)
+
+</div>
+
 ---
 
 # 🥷 Dojutsu-for-AI
@@ -40,6 +52,20 @@ Dojutsu-for-AI exécute un **pipeline de 5 étapes** avant de générer du code 
 
 ---
 
+## Résultats du benchmark
+
+<div align="center">
+
+![Benchmark](assets/benchmark.svg)
+
+</div>
+
+> **Dojutsu 90% vs Baseline 55%** — Le pipeline prend ~10× plus de temps mais anticipe
+> 8 modes de défaillance production non mentionnés dans la tâche.
+> Voir [`tests/benchmarks/`](tests/benchmarks/) pour l'analyse complète.
+
+---
+
 ## Compatible avec n'importe quel provider IA
 
 Dojutsu-for-AI fonctionne avec **tout provider LLM** — propriétaire ou open source :
@@ -61,8 +87,8 @@ Aucun pip install. Aucun package manager. Juste cloner et utiliser.
 
 ```bash
 # 1. Clone
-git clone https://github.com/Tryboy869/senjutsu-coding-agent.git
-cd senjutsu-coding-agent
+git clone https://github.com/Tryboy869/dojutsu-for-ai
+cd dojutsu-for-ai
 
 # 2. Installer la seule dépendance runtime
 pip install groq  # ou: pip install openai / anthropic / mistralai
@@ -81,7 +107,11 @@ python providers/dojutsu-agent/main.py run "Construire un service d'auth FastAPI
 Dojutsu-for-AI est distribué comme provider **Allpath Runner** — appelable depuis n'importe quel langage.
 
 ```bash
-# Démarrer le daemon Allpath (détecte ./providers/ automatiquement)
+# 1. Clone (si pas encore fait)
+git clone https://github.com/Tryboy869/dojutsu-for-ai
+cd dojutsu-for-ai
+
+# 2. Démarrer le daemon
 python allpath-runner.py daemon &
 ```
 
@@ -101,15 +131,23 @@ def dojutsu(fn, args=[]):
     s.close()
     return json.loads(b''.join(chunks))
 
-# Pipeline complet avec Groq / Kimi
+# Pipeline complet — Groq / Kimi
 result = dojutsu("run", ["Construire une queue async avec FastAPI", "gsk_xxx", "groq"])
 
 # Avec OpenAI
 result = dojutsu("run", ["Construire une queue async", "sk-xxx", "openai", "gpt-4o"])
 
-print(result["execution"])   # code production-ready
-print(result["skills_used"]) # skills sélectionnés par le RAG
+print(result["execution"])    # code production-ready
+print(result["skills_used"])  # skills sélectionnés par le RAG
 ```
+
+---
+
+## Exemples multilangage
+
+Tous les langages se connectent au même daemon Allpath via socket Unix — **zéro configuration supplémentaire**.
+
+> TypeScript · Go · Rust · Java · PHP · Ruby · C# — voir [`examples/`](https://github.com/Tryboy869/dojutsu-for-ai/tree/main/examples)
 
 ---
 
@@ -128,31 +166,19 @@ print(result["skills_used"]) # skills sélectionnés par le RAG
 
 ## Assets SVG animés
 
-Le dossier `assets/` contient 4 SVG animés conçus pour ce README :
+Le dossier `assets/` contient **5 SVG animés** conçus pour ce README :
 
 | Fichier | Contenu | Utilisation |
 |---------|---------|-------------|
 | `header.svg` | Titre animé avec ligne de scan + particules | Haut du README |
-| `logo-eyes.svg` | Yeux Byakugan × Jōgan clignotants (blink + tracking) | Identité / hero |
-| `dev-card.svg` | Carte créateur avec bordure animée + particules | Section auteur |
-| `footer.svg` | Footer dégradé avec point de lumière voyageur | Bas du README |
+| `logo-eyes.svg` | Yeux Byakugan × Jōgan clignotants | Identité / hero |
+| `dev-card.svg` | Carte créateur avec bordure animée | Section auteur |
+| `footer.svg` | Footer dégradé avec point de lumière | Bas du README |
+| `benchmark.svg` | Comparaison cinématique Baseline vs Dojutsu | Section benchmark |
 
-Toutes les animations respectent `prefers-reduced-motion` pour l'accessibilité.
+Toutes les animations respectent `prefers-reduced-motion`.
 
 ---
-
-
-## Résultats du benchmark
-
-<div align="center">
-
-![Benchmark](assets/benchmark.svg)
-
-</div>
-
-> **Dojutsu 90% vs Baseline 55%** — Le pipeline prend ~10× plus de temps mais anticipe
-> 8 modes de défaillance production non mentionnés dans la tâche.
-> Voir [`tests/benchmarks/`](tests/benchmarks/) pour l'analyse complète.
 
 <div align="center">
 

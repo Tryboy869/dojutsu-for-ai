@@ -1,5 +1,17 @@
 # Changelog — Dojutsu-for-AI
 
+## [2.2.0] — 2026-02-28
+
+### Fixed
+- README.md — réécriture complète : toutes les URLs pointent vers `https://github.com/Tryboy869/dojutsu-for-ai`
+- README.fr.md — idem
+- Badges pro ajoutés (MIT, Python, Allpath Runner, Skills, Providers, Languages, Release, Stars)
+- `benchmark.svg` ajouté dans le tableau SVG Assets (5ème SVG)
+- Section "How It Works" repositionnée avant Benchmark Results
+- Exemples multilangage — liens directs vers les fichiers dans `examples/`
+
+---
+
 ## [2.1.0] — 2026-02-28
 
 ### Added
