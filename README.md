@@ -61,8 +61,8 @@ No pip install. No package manager. Just clone and use.
 
 ```bash
 # 1. Clone
-git clone https://github.com/Tryboy869/senjutsu-coding-agent.git
-cd senjutsu-coding-agent
+git clone https://github.com/Tryboy869/dojutsu-for-ai
+cd dojutsu-for-ai
 
 # 2. Install the only runtime dependency
 pip install groq  # or: pip install openai / anthropic / mistralai
